@@ -28,6 +28,40 @@ This repository contains a comprehensive data-driven Eurovision Song Contest 202
 - **Viral Champions & Gaps**:
   - 🇦🇹 *Austria* over-delivered by +2 200 views/pt (highest VPP).
   - 🇮🇹 *Italy* under-performed by –10 000 views/pt, suggesting a “digital reach gap.
+  - <h3>Practical Metric Breakdown</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Metric</strong></th>
+      <th><strong>What It Means</strong></th>
+      <th><strong>Why It Matters</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Pearson Correlation (r)</strong></td>
+      <td>Shows how closely contest points align with YouTube views.</td>
+      <td>High r (e.g., 0.77) means performances that score well also draw strong online interest.</td>
+    </tr>
+    <tr>
+      <td><strong>Linear Regression & R²</strong></td>
+      <td>Estimates how many views each point brings; R² shows prediction accuracy.</td>
+      <td>Each point ≈ 14k extra views; R² = 0.59 means points explain 59% of view count variance.</td>
+    </tr>
+    <tr>
+      <td><strong>Views-Per-Point (VPP)</strong></td>
+      <td>Normalizes view count by score to show “viral power”.</td>
+      <td>High VPP = underrated but viral; low VPP = scored well but lacked digital traction.</td>
+    </tr>
+    <tr>
+      <td><strong>Outlier Detection</strong></td>
+      <td>Flags acts whose views diverge sharply from their scores.</td>
+      <td>Helps spot hidden hits or acts that didn’t resonate despite scoring high.</td>
+    </tr>
+  </tbody>
+</table>
+
     **Actionable Roadmap**:
   1. **Enrich the Model**: Incorporate artist Spotify followers, social media buzz, and TikTok activity to improve explanatory power.
   2. **Real-Time Tracking**: Schedule automated API pulls to capture view spikes and engagement surges.
