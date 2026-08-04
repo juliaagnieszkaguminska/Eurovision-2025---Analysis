@@ -48,6 +48,7 @@
         "    except Exception:\n",
         "        return 0.0\n",
         "\n",
+        "# Dane dla finału Eurowizji 2026: (Kraj, Jury_Pts, Televote_Pts, YouTube_Video_ID)\n",
         "data = [\n",
         "    (\"Austria\",     210, 226, \"-ieSTNpxvio\"),\n",
         "    (\"Izrael\",      140, 217, \"Q3BELu4z6-U\"),\n",
@@ -98,7 +99,7 @@
         "df[\"Cluster\"] = kmeans.fit_predict(scaled_features)\n",
         "df[\"Cluster\"] = df[\"Cluster\"].astype(str)\n",
         "\n",
-        "print(\"=== OLS REGRESSION SUMMARY ===\")\n",
+        "print(\"=== OLS REGRESSION SUMMARY (Eurovision 2026) ===\")\n",
         "print(model.summary())\n",
         "\n",
         "print(\"\\n=== CLUSTER SUMMARY ===\")\n",
@@ -113,7 +114,7 @@
         "    size=\"Engagement_Rate (%)\",\n",
         "    hover_name=\"Kraj\",\n",
         "    hover_data=[\"Sentiment_Score\", \"Residuals\"],\n",
-        "    title=\"3D Insight Matrix: Jury vs Televote vs YouTube Views (Color: K-Means Cluster)\"\n",
+        "    title=\"Eurovision 2026: 3D Insight Matrix (Jury vs Televote vs YouTube Views)\"\n",
         ")\n",
         "fig_3d.update_layout(template=\"plotly_dark\")\n",
         "fig_3d.show()\n",
@@ -124,13 +125,13 @@
         "    y=\"Residuals\",\n",
         "    color=\"Residuals\",\n",
         "    color_continuous_scale=\"Viridis\",\n",
-        "    title=\"Anomalies & Overperformance (OLS Regression Residuals)\"\n",
+        "    title=\"Eurovision 2026: Outliers & Overperformance (OLS Residuals)\"\n",
         ")\n",
         "fig_resid.update_layout(template=\"plotly_dark\")\n",
         "fig_resid.show()\n",
         "\n",
-        "fig_3d.write_html(\"eurovision_3d_insights.html\")\n",
-        "fig_resid.write_html(\"eurovision_residuals.html\")\n"
+        "fig_3d.write_html(\"eurovision_2026_3d_insights.html\")\n",
+        "fig_resid.write_html(\"eurovision_2026_residuals.html\")\n"
       ]
     }
   ],
